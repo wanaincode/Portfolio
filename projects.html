@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wang, Meng-Chi | Project</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { overflow-x: hidden; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      background-attachment: fixed;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: .5rem 0 0 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    h2 { margin-top: 2rem; }
+
+    /* Carousel styles */
+    .carousel-viewport {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
+    .carousel {
+      display: flex;
+      margin: 1.5rem 0;
+      transition: transform 0.4s ease;
+      will-change: transform;
+      /* hide scrollbar */
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;  /* IE and Edge */
+    }
+    .carousel::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,.06);
+      padding: 1.2rem 1.4rem;
+      min-width: 100%;
+      flex: 0 0 100%;
+      margin: 0;
+    }
+    .prev,
+    .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(51,51,51,0.8);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 2rem;
+      cursor: pointer;
+      z-index: 2;
+      transition: background 0.2s;
+    }
+    .prev:hover,
+    .next:hover {
+      background: #222;
+    }
+    .prev {
+      left: 0.5rem;
+    }
+    .next {
+      right: 0.5rem;
+    }
+    /* Make sure main.container is positioned for absolute children */
+    main.container {
+      position: relative;
+    }
+    .project-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .tech {
+      margin-top: .5rem;
+      font-size: .9rem;
+      color: #555;
+    }
+    .screenshot {
+      margin-top: 1rem;
+    }
+    .screenshot img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Project</h1>
+    <p>個人開発・研究プロジェクトの一覧</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="projects.html">Project</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="container">
+    <button class="prev" aria-label="前へ">‹</button>
+    <button class="next" aria-label="次へ">›</button>
+    <div class="carousel-viewport">
+      <div class="carousel">
+        <section class="card">
+          <div class="project-title">Title1</div>
+          <p>Content1</p>
+        </section>
+        <section class="card">
+          <div class="project-title">Title2</div>
+          <p>Content2</p>
+        </section>
+        <section class="card">
+          <div class="project-title">Title3</div>
+          <p>Content3</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Wang, Meng-Chi |
+      <a href="mailto:elvnee@gmail.com" style="color:#fff;">Email</a> |
+      <a href="https://github.com/wanaincode" target="_blank" style="color:#fff;">GitHub</a>
+    </p>
+  </footer>
+  <script>
+    // Carousel navigation script
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousel = document.querySelector('.carousel');
+      const viewport = document.querySelector('.carousel-viewport');
+      const prevBtn = document.querySelector('.prev');
+      const nextBtn = document.querySelector('.next');
+      const cards = carousel.querySelectorAll('.card');
+      if (!carousel || !viewport || !prevBtn || !nextBtn || cards.length === 0) return;
+
+      let currentIndex = 0;
+      let cardWidth = viewport.offsetWidth;
+
+      function updateCarousel() {
+        carousel.style.transform = `translateX(${-currentIndex * cardWidth}px)`;
+      }
+
+      window.addEventListener('resize', () => {
+        cardWidth = viewport.offsetWidth;
+        updateCarousel();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateCarousel();
+        }
+      });
+
+      nextBtn.addEventListener('click', () => {
+        if (currentIndex < cards.length - 1) {
+          currentIndex++;
+          updateCarousel();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wang, Meng-Chi | Research</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: .5rem 0 0 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 980px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    h2 { margin-top: 2rem; }
+    .muted { color: #666; font-size: .95rem; }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,.06);
+      padding: 1.2rem 1.4rem;
+      margin: 1rem 0;
+    }
+    .pub-item { display: grid; gap: .35rem; }
+    .pub-meta { color: #555; font-size: .95rem; }
+    .tag {
+      display: inline-block;
+      font-size: .8rem;
+      padding: .15rem .6rem;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #3b5bdb;
+      margin-right: .4rem;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 800px){
+      .row { grid-template-columns: 1fr; }
+    }
+
+    details summary {
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: .25rem;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header + Navigation -->
+  <header>
+    <h1>Research</h1>
+    <p>SIMS信号解析・ベイズ推論・モンテカルロ/EMC・製造業向けAI</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="projects.html">Project</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- 概要 -->
+    <section class="card">
+      <h2>研究概要</h2>
+      <p>
+        私は<strong>低カウント・高ノイズ</strong>環境下での
+        SIMS（Secondary Ion Mass Spectrometry）2次元画像復元とパラメータ推定を研究しています。
+        <strong>マルチピークPoisson尤度モデル</strong>を用い、
+        <strong>Exchange Monte Carlo（EMC）</strong>と
+        <strong>Robbins–Monro法</strong>によるベイズ推論を組み合わせることで、
+        マイクロメートルスケールの金ドット配列の位置と形状パラメータを高精度に復元します。
+      </p>
+      <p class="muted">
+        キーワード：
+        <span class="tag">Bayesian</span>
+        <span class="tag">Poisson Likelihood</span>
+        <span class="tag">EMC</span>
+        <span class="tag">Robbins–Monro</span>
+        <span class="tag">SIMS</span>
+      </p>
+    </section>
+
+    <!-- 研究分野 + 最近の活動 -->
+    <section class="row">
+      <div class="card">
+        <h2>研究分野</h2>
+        <ul>
+          <li>低SNR条件下での<strong>統計的推論と事前分布設計</strong></li>
+          <li>マルチピークPSFモデルにおける<strong>位置・形状推定</strong></li>
+          <li><strong>並列モンテカルロ</strong>と収束性解析</li>
+          <li>製造現場における<strong>AI応用</strong>（外観検査、自動化、PLCコード検索）</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>最近の活動</h2>
+        <ul>
+          <li>日本物理学会（JPS）2025広島大会 発表準備</li>
+          <li>人工データによる<strong>極低強度</strong>条件での安定性評価</li>
+          <li>TEM先験情報を利用した<strong>強事前知識</strong>の導入</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 論文 -->
+    <section class="card">
+      <h2>論文・プレプリント</h2>
+      <div class="pub-item">
+        <strong>Bayesian multi-peak Poisson model for SIMS image reconstruction with Exchange Monte Carlo</strong>
+        <div class="pub-meta">M.-C. Wang, B. SHIEH, 他, 2025 (投稿準備中)</div>
+        <div>
+          <a href="#" onclick="event.preventDefault(); alert('プレプリント公開後にリンク追加予定');">PDF</a> |
+          <a href="https://github.com/wanaincode/AonishiLab_EMC_model" target="_blank">コード</a>
+        </div>
+        <details>
+          <summary>BibTeX</summary>
+<pre>
+@article{Wang2025SIMS-Bayes,
+  title   = {Bayesian Multi-peak Poisson Model for SIMS Image Reconstruction with Exchange Monte Carlo},
+  author  = {Wang, Meng-Chi and Shieh, Binsheu and Aonishi, T. 他},
+  year    = {2025},
+  note    = {in preparation}
+}
+</pre>
+        </details>
+      </div>
+    </section>
+
+    <!-- 学会発表 -->
+    <section class="card">
+      <h2>学会発表</h2>
+      <ul>
+        <li><strong>SIMS信号のマルチピークPoissonモデルと2次元画像復元</strong> — 日本物理学会 2025広島大会（口頭/ポスター発表）</li>
+        <li><strong>低カウントSIMSにおけるベイズ推論の安定性解析</strong> — 東京大学 大学院セミナー, 2025</li>
+      </ul>
+    </section>
+
+    <!-- データとコード -->
+    <section class="card">
+      <h2>データ・コード</h2>
+      <ul>
+        <li><strong>EMC_model</strong> — 
+          <a href="https://github.com/wanaincode/AonishiLab_EMC_model" target="_blank">GitHub</a>
+          <span class="muted">（大規模出力ファイルはLFSまたはローカル管理推奨）</span>
+        </li>
+        <li><strong>SIMS人工データ生成・強事前知識テスト用スクリプト</strong> — <span class="muted">近日公開予定</span></li>
+      </ul>
+    </section>
+
+    <!-- 受賞・共同研究 -->
+    <section class="row">
+      <div class="card">
+        <h2>受賞</h2>
+        <ul>
+          <li>情報処理学会 第86回大会 <strong>学生奨励賞</strong></li>
+          <li>Mercari Bold Program 2025 <strong>1位受賞</strong></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>共同研究・指導</h2>
+        <p class="muted">東京大学 青西研究室
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Wang, Meng-Chi |
+      <a href="mailto:elvnee@gmail.com" style="color:#fff;">Email</a> |
+      <a href="https://github.com/wanaincode" target="_blank" style="color:#fff;">GitHub</a>
+    </p>
+  </footer>
+</body>
+</html>
