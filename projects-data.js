@@ -32,6 +32,6 @@ window.PROJECTS = [
     media: { type: "none" }, // #comment: 沒媒體就寫 none 或移除此欄位
     tags: ["HTML", "CSS", "JS"],
     github: "https://github.com/wanaincode/Portfolio",
-    demo: "https://github.com/wanaincode/Portfolio"
+    demo: "https://wanaincode.github.io/Portfolio/"
   }
 ];
