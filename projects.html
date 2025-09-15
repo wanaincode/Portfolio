@@ -1,220 +1,220 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wang, Meng-Chi | Project</title>
   <style>
+    /* ===== Base ===== */
     *, *::before, *::after { box-sizing: border-box; }
     html, body { overflow-x: hidden; }
     body {
       font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-      background-attachment: fixed;
-      color: #333;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      margin: 0; padding: 0; line-height: 1.6;
+      background: #000; color: #fff; min-height: 100vh;
     }
-    header {
-      background: #333;
-      color: #fff;
-      padding: 1rem 0;
-      text-align: center;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin: .5rem 0 0 0;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover { text-decoration: underline; }
 
-    .container {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      flex: 1;
+    /* ===== Layout ===== */
+    .container {                /* 唯一外層容器：你目前用百分比，我保留 */
+      max-width: 75%;
+      margin: 0 auto;
+      padding: 2rem 1rem 3rem;
+    }
+    .hero-title {
+      color: #52ff43; font-weight: 800;
+      font-size: clamp(2.2rem, 6vw, 3.2rem);
+      letter-spacing: .02em; text-transform: uppercase;
+      margin: 0 0 1.25rem 0; text-align: center;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    /* ===== Carousel ===== */
+    .viewport {                 /* 可視區，箭頭相對這個定位 */
       position: relative;
-      overflow: hidden;
-    }
-
-    h2 { margin-top: 2rem; }
-
-    /* Carousel styles */
-    .carousel-viewport {
       overflow: hidden;
       width: 100%;
-      position: relative;
     }
-    .carousel {
+    .track {                    /* 橫向滑動容器 */
       display: flex;
-      margin: 1.5rem 0;
-      transition: transform 0.4s ease;
+      transition: transform .4s ease;
       will-change: transform;
-      /* hide scrollbar */
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none;  /* IE and Edge */
     }
-    .carousel::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Opera */
-    }
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 6px 16px rgba(0,0,0,.06);
-      padding: 1.2rem 1.4rem;
-      min-width: 100%;
+    .card {                     /* 一頁一張，邏輯最穩 */
       flex: 0 0 100%;
-      margin: 0;
+      min-width: 100%;
+      padding: 1.25rem 0;
     }
-    .prev,
-    .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(51,51,51,0.8);
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      width: 2.5rem;
-      height: 2.5rem;
-      font-size: 2rem;
-      cursor: pointer;
-      z-index: 2;
-      transition: background 0.2s;
+    .card-box {                 /* 視覺上 90% 寬 */
+      width: 90%; margin: 0 auto;
+      background: #111; border: 1px solid #222; border-radius: 12px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.35); color: #eee;
+      padding: 1.4rem 1.6rem;
+      min-height: 600px; 
     }
-    .prev:hover,
-    .next:hover {
-      background: #222;
+    .project-title { font-size: 1.25rem; font-weight: 800; color: #52ff43; margin: 0 0 .5rem 0; }
+
+    /* ===== Media / Buttons / Tags ===== */
+    .media { margin-top: 0.9rem; }
+    .yt-16x9 { position: relative; width: 100%; padding-top: 56.25%; }
+    .yt-16x9 iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 8px;
     }
-    .prev {
-      left: 0.5rem;
+    .btn-row { margin-top: 0.75rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.45rem 0.75rem; border-radius: 8px; text-decoration: none;
+      color: #000; background: #52ff43; font-weight: 700; border: 1px solid #3ddb2f;
     }
-    .next {
-      right: 0.5rem;
-    }
-    /* Make sure main.container is positioned for absolute children */
-    main.container {
-      position: relative;
-    }
-    .project-title {
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-    .tech {
-      margin-top: .5rem;
-      font-size: .9rem;
-      color: #555;
-    }
-    .screenshot {
-      margin-top: 1rem;
-    }
-    .screenshot img {
-      width: 100%;
-      border-radius: 8px;
-      border: 1px solid #ddd;
+    .btn.outline { background: transparent; color: #fff; border: 1px solid #444; }
+    .btn:hover { filter: brightness(1.05); }
+    .tags { margin-top: 0.6rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag {
+      font-size: 0.8rem; color: #cfd2d4; border: 1px solid #2b2b2b;
+      padding: 0.15rem 0.5rem; border-radius: 999px; background:#111;
     }
 
-    footer {
-      background: #333;
-      color: #fff;
-      text-align: center;
-      padding: 1rem 0;
-      margin-top: auto;
+    /* ===== Arrows ===== */
+    .arrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 2.5rem; height: 2.5rem; border-radius: 50%;
+      background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25);
+      color: #fff; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: background .2s, transform .1s;
+      backdrop-filter: blur(2px); z-index: 2000; line-height: 1; padding: 0; border: none;
+    }
+    .arrow:hover { background: rgba(255,255,255,.3); }
+    .arrow:active { transform: translateY(-50%) scale(.96); }
+    .arrow svg { width: 1.2rem; height: 1.2rem; }
+    .arrow.prev { left: .5rem; }
+    .arrow.next { right: .5rem; }
+
+    /* ===== Right-side circle nav（沿用） ===== */
+    .circle-nav {
+      position: fixed; top: 50%; right: 20px; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 1rem; z-index: 1000; opacity: .8;
+    }
+    .circle-link {
+      width: 70px; height: 70px; border-radius: 50%;
+      background: #cfc8ff; color: #000; display: flex; align-items: center; justify-content: center;
+      font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,.3);
+      transition: transform .2s ease; font-size: .85rem;
+    }
+    .circle-link:hover { transform: scale(1.1); }
+
+    @media (max-width: 420px) {
+      .arrow { width: 2.2rem; height: 2.2rem; }
+      .arrow svg { width: 1rem; height: 1rem; }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <h1>Project</h1>
-    <p>個人開発・研究プロジェクトの一覧</p>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="projects.html">Project</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="container">
+    <h1 class="hero-title">PROJECT</h1>
 
-  <!-- Main -->
-  <main class="container">
-    <button class="prev" aria-label="前へ">‹</button>
-    <button class="next" aria-label="次へ">›</button>
-    <div class="carousel-viewport">
-      <div class="carousel">
-        <section class="card">
-          <div class="project-title">Title1</div>
-          <p>Content1</p>
-        </section>
-        <section class="card">
-          <div class="project-title">Title2</div>
-          <p>Content2</p>
-        </section>
-        <section class="card">
-          <div class="project-title">Title3</div>
-          <p>Content3</p>
-        </section>
-      </div>
+    <div class="viewport" id="viewport">
+      <div class="track" id="track"><!-- JS will render cards here --></div>
+
+      <button class="arrow prev" id="prev" aria-label="前へ">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button class="arrow next" id="next" aria-label="次へ">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
     </div>
-  </main>
+  </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Wang, Meng-Chi |
-      <a href="mailto:elvnee@gmail.com" style="color:#fff;">Email</a> |
-      <a href="https://github.com/wanaincode" target="_blank" style="color:#fff;">GitHub</a>
-    </p>
-  </footer>
+  <div class="circle-nav">
+    <a href="index.html" class="circle-link">Home</a>
+    <a href="resume.html" class="circle-link">Resume</a>
+    <a href="research.html" class="circle-link">Research</a>
+  </div>
+
+  <!-- 先載入資料檔 -->
+  <script src="projects-data.js"></script>
   <script>
-    // Carousel navigation script
-    document.addEventListener('DOMContentLoaded', function() {
-      const carousel = document.querySelector('.carousel');
-      const viewport = document.querySelector('.carousel-viewport');
-      const prevBtn = document.querySelector('.prev');
-      const nextBtn = document.querySelector('.next');
-      const cards = carousel.querySelectorAll('.card');
-      if (!carousel || !viewport || !prevBtn || !nextBtn || cards.length === 0) return;
+    // #comment: Render projects -> init carousel
+    (function () {
+      const track = document.getElementById('track');
+      const viewport = document.getElementById('viewport');
+      const prev = document.getElementById('prev');
+      const next = document.getElementById('next');
 
-      let currentIndex = 0;
-      let cardWidth = viewport.offsetWidth;
-
-      function updateCarousel() {
-        carousel.style.transform = `translateX(${-currentIndex * cardWidth}px)`;
-      }
-
-      window.addEventListener('resize', () => {
-        cardWidth = viewport.offsetWidth;
-        updateCarousel();
-      });
-
-      prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-          currentIndex--;
-          updateCarousel();
+      const escapeHtml = (s) => (s ?? "").replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+      const mediaHTML = (m) => {
+        if (!m || m.type === 'none') return '';
+        if (m.type === 'youtube' && m.id) {
+          return `
+            <div class="media yt">
+              <div class="yt-16x9">
+                <iframe src="https://www.youtube.com/embed/${escapeHtml(m.id)}"
+                        title="YouTube video"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+              </div>
+            </div>`;
         }
-      });
-
-      nextBtn.addEventListener('click', () => {
-        if (currentIndex < cards.length - 1) {
-          currentIndex++;
-          updateCarousel();
+        if (m.type === 'video' && m.src) {
+          const poster = m.poster ? `poster="${escapeHtml(m.poster)}"` : '';
+          return `
+            <div class="media">
+              <video controls ${poster} style="width:100%; border-radius:8px;">
+                <source src="${escapeHtml(m.src)}" type="video/mp4">
+              </video>
+            </div>`;
         }
-      });
-    });
+        if (m.type === 'image' && m.src) {
+          const alt = escapeHtml(m.alt || '');
+          return `
+            <div class="media">
+              <img src="${escapeHtml(m.src)}" alt="${alt}" style="width:100%; border-radius:8px; border:1px solid #222;">
+            </div>`;
+        }
+        return '';
+      };
+      const tagsHTML = (tags) => {
+        if (!tags || !tags.length) return '';
+        return `<div class="tags">${tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>`;
+      };
+      const linkButtons = (p) => {
+        const buttons = [];
+        if (p.github) buttons.push(`<a class="btn" href="${escapeHtml(p.github)}" target="_blank" rel="noopener">GitHub</a>`);
+        if (p.demo) buttons.push(`<a class="btn outline" href="${escapeHtml(p.demo)}" target="_blank" rel="noopener">Demo</a>`);
+        return buttons.length ? `<div class="btn-row">${buttons.join('')}</div>` : '';
+      };
+
+      // 渲染卡片
+      const list = Array.isArray(window.PROJECTS) ? window.PROJECTS : [];
+      track.innerHTML = list.map(p => `
+        <section class="card">
+          <div class="card-box">
+            <div class="project-title">${escapeHtml(p.title || "")}</div>
+            <p>${escapeHtml(p.desc || "")}</p>
+            ${mediaHTML(p.media)}
+            ${tagsHTML(p.tags)}
+            ${linkButtons(p)}
+          </div>
+        </section>
+      `).join("");
+
+      // 輪播初始化
+      const slides = track.querySelectorAll('.card');
+      if (!viewport || slides.length === 0 || !prev || !next) return;
+
+      let index = 0;
+      const slideWidth = () => viewport.offsetWidth;      // 一頁寬 = viewport
+      const update = () => { track.style.transform = `translateX(${-index * slideWidth()}px)`; };
+
+      window.addEventListener('resize', update);
+      prev.addEventListener('click', () => { if (index > 0) { index--; update(); } });
+      next.addEventListener('click', () => { if (index < slides.length - 1) { index++; update(); } });
+
+      update(); // 初始化
+    })();
   </script>
 </body>
 </html>

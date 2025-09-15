@@ -36,7 +36,7 @@
       text-align: left;
     }
     .hero-title {
-      color: #93f36a;
+      color: #52ff43;
       font-weight: 800;
       font-size: clamp(2.4rem, 6vw, 3.5rem);
       letter-spacing: .02em;
@@ -50,7 +50,7 @@
       margin: 0 auto;
     }
     h2 {
-      color: #93f36a;
+      color: #52ff43;
       margin-top: 2rem;
     }
     ul li {
@@ -95,9 +95,15 @@
     .circle-link:hover {
       transform: scale(1.1);
     }
+    .container {
+      max-width: 75%;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
   </style>
 </head>
 <body>
+  <div class="container">
   <section class="hero">
     <div class="hero-inner">
       <h1 class="hero-title">Resume</h1>
@@ -105,46 +111,76 @@
         <section>
           <h2>学歴</h2>
           <ul>
-            <li><strong>東京大学 大学院</strong> — 新領域創世科学研究科 複雑理工学専攻 修士課程（2024/10–2026/9見込み）</li>
-            <li><strong>国立清華大学 大学院（台湾）</strong> — 材料工学 金属専攻　修士課程（2017–2020）</li>
-            <li><strong>国立清華大学（台湾）</strong> — 材料工学 学士課程（2013–2017）</li>
+            <li><strong>東京大学大学院</strong>　新領域創世科学研究科複雑理工学専攻　修士課程（2024/10–2026/9見込み）</li>
+            <li><strong>国立清華大学大学院</strong>　材料工学金属専攻　修士課程（2017–2020）</li>
+            <li><strong>国立清華大学</strong>　材料工学　学士課程（2013–2017）</li>
           </ul>
         </section>
         <section>
           <h2>職歴・インターン</h2>
           <ul>
             <li>
-              Airion株式会社（2025/3–2025/12）
+              <strong>Airion株式会社（2025/3–2025/12）</strong>
               <div>AIエンジニア　長期インターン</div>
               <div class="job-desc">製造業向け画像検査AIの開発、PLCコード検索LLMシステムの構築</div>
             </li>
             <li>
-              東京エレクトロン株式会社（台湾）（2020–2022）
+              <strong>Mercari Bold Program 2025 （2025/8）</strong>
+              <div>データアナリスト　短期インターン（9 days）</div>
+              <div class="job-desc">台湾・香港市場に向けた分析と事業提案</div>
+            </li>
+            <li>
+              <strong>東京エレクトロン株式会社　台湾支社（2020–2022）</strong>
               <div>プロセスエンジニア　正社員</div>
               <div class="job-desc">半導体プロセス設計、プラズマ密度管理、品質改善、技術導入</div>
             </li>
           </ul>
         </section>
         <section>
-          <h2>スキル</h2>
-          <ul>
-            <li>プログラミング：Python（NumPy, Pandas, Matplotlib, scikit-learn）、C++、R</li>
-            <li>AI/ML：PyTorch, OpenAI API, Embedding Search, RAG</li>
-            <li>Web開発：HTML/CSS/JavaScript, Node.js, GitHub Pages</li>
-            <li>言語：日本語（N1）、英語（TOEIC 860）、中国語（母語）</li>
-          </ul>
-        </section>
+        <h2>スキル</h2>
+        <ul>
+          <li>
+            <strong>Programming</strong>
+            <div class="job-desc">
+              <div>Python（NumPy, Pandas, Matplotlib, scikit-learn）、C++、C、R、HTML/CSS/JavaScript </div> 
+              <div>Git・GitHub を用いた開発経験あり</div>
+            </div>
+          </li>
+          <li>
+            <strong>Data Science</strong>
+            <div class="job-desc">
+              <div>Kaggle形式の課題を通じて実データ分析スキルを習得（GCI 2024 Winter）</div>  
+              <div>データ前処理、可視化、統計解析、SQL を用いたデータベース操作</div>
+            </div>
+          </li>
+          <li>
+            <strong>AI / ML</strong>
+            <div class="job-desc">
+              <div>PyTorch によるモデル構築・学習、Embedding Search・RAG 実装</div>  
+              <div>GroundingDINO・SAM・CLIP を統合したゼロショット画像認識システム開発</div>
+              <div>Azure GPU インスタンスを用いた実行環境構築・検証</div>
+            </div>
+          </li>
+          <li>
+            <strong>言語</strong>
+            <div class="job-desc">
+              日本語（N1）、英語（TOEIC 860）、中国語（母語）
+            </div>
+          </li>
+        </ul>
+      </section>
         <section>
           <h2>受賞・奨学金</h2>
           <ul>
             <li>Mercari Bold Program 2025 優勝</li>
-            <li>情報処理学会 第86回大会(2024) 学生奨励賞</li>
+            <li>情報処理学会 第86回大会（2024） 学生奨励賞</li>
             <li>東燃財団奨学金 2024年度</li>
           </ul>
         </section>
       </div>
     </div>
   </section>
+  </div>
   <div class="circle-nav">
     <a href="index.html" class="circle-link">Home</a>
     <a href="research.html" class="circle-link">Research</a>

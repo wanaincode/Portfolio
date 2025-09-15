@@ -33,10 +33,10 @@
     flex-direction: column;
     gap: 0.4rem;
     align-items: center;
-    text-align: center;
+    text-align: left;
   }
   .hero-title {
-    color: #93f36a;
+    color: #52ff43;
     font-weight: 800;
     font-size: clamp(2.4rem, 6vw, 3.5rem);
     letter-spacing: .02em;
@@ -46,12 +46,11 @@
     text-transform: uppercase;
   }
   .resume-sections {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
+      max-width: 800px;
+      margin: 0 auto;
   }
   h2 {
-    color: #93f36a;
+    color: #52ff43;
     margin-top: 2rem;
   }
   ul li {
@@ -91,12 +90,12 @@
   .circle-link:hover { transform: scale(1.1); }
   /* small subtitle under the page title */
   .hero-sub {
-    color: #aaa;
+    color: #f1d1ffde;
     font-size: 1rem;
     margin: -2rem 0 0.25rem 0; /* tight to the title */
     text-align: center;
   }
-  .hero-sub a { color: #93f36a; text-decoration: none; }
+  .hero-sub a { color: #c7f8cb; text-decoration: underline; }
   .hero-sub a:hover { color: #fff; }
 
   /* small gray subline used inside lists (e.g., conference titles) */
@@ -105,9 +104,15 @@
     color: #ccc;
     margin-top: 0.25rem;
   }
+  .container {
+    max-width: 75%;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
   </style>
 </head>
 <body>
+  <div class="container">
   <section class="hero">
     <div class="hero-inner">
       <h1 class="hero-title">Research</h1>
@@ -115,7 +120,7 @@
       <div class="resume-sections">
         <section>
           <h2>研究概要</h2>
-          <p>私は<strong>低カウント・高ノイズ</strong>環境下でのSIMS 2次元画像復元とパラメータ推定を研究しています。<strong>マルチピークPoisson尤度モデル</strong>、<strong>Exchange Monte Carlo（EMC）</strong>、<strong>Robbins–Monro法</strong>によるベイズ推論を組み合わせ、高精度復元を行います。</p>
+          <p>現在、<strong>低カウント・高ノイズ</strong>環境下でのSIMS 2次元画像復元とパラメータ推定を研究しています。<strong>マルチピークPoisson尤度モデル</strong>、<strong>Exchange Monte Carlo（EMC）</strong>、<strong>Robbins–Monro法</strong>によるベイズ推論を組み合わせ、高精度復元を行います。</p>
         </section>
         <section>
           <h2>研究分野</h2>
@@ -123,7 +128,7 @@
             <li>統計的推論と事前分布設計</li>
             <li>マルチピークPSFモデルにおける位置・形状推定</li>
             <li>交換モンテカルロと収束性解析</li>
-            <li>製造現場におけるAI応用</li>
+            <li>半導体材料計測におけるAI応用</li>
           </ul>
         </section>
 
@@ -144,6 +149,7 @@
       </div>
     </div>
   </section>
+  </div>
   <div class="circle-nav">
     <a href="index.html" class="circle-link">Home</a>
     <a href="resume.html" class="circle-link">Resume</a>
