@@ -31,7 +31,7 @@ window.PROJECTS = [
     desc: "個人ポートフォリオサイトのデザインと実装。純 HTML/CSS/JS、GitHub Pages で公開。",
     media: { type: "none" }, // #comment: 沒媒體就寫 none 或移除此欄位
     tags: ["HTML", "CSS", "JS"],
-    github: "https://github.com/wanaincode/Homepage",
-    demo: ""
+    github: "https://github.com/wanaincode/Portfolio",
+    demo: "https://github.com/wanaincode/Portfolio"
   }
 ];
