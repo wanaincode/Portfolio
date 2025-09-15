@@ -10,121 +10,145 @@
       margin: 0;
       padding: 0;
       line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: #000;
+      color: #fff;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
-    header {
-      background: #333;
+    .hero {
+      background: #000;
       color: #fff;
-      padding: 1rem 0;
-      text-align: center;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
+      padding: 2rem 1rem 3rem;
+      box-sizing: border-box;
+      min-height: 100vh;
       display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 2rem;
-      margin: .5rem 0 0 0;
     }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover { text-decoration: underline; }
-
-    .container {
+    .hero-inner {
       max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      flex: 1;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      align-items: center;
+      text-align: left;
     }
-
-    h2 { margin-top: 2rem; }
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 6px 16px rgba(0,0,0,.06);
-      padding: 1.2rem 1.4rem;
-      margin: 1rem 0;
-    }
-    ul { padding-left: 1.2rem; }
-    li { margin-bottom: .5rem; }
-
-    footer {
-      background: #333;
-      color: #fff;
+    .hero-title {
+      color: #93f36a;
+      font-weight: 800;
+      font-size: clamp(2.4rem, 6vw, 3.5rem);
+      letter-spacing: .02em;
+      margin: 0 0 1.75rem 0;
       text-align: center;
-      padding: 1rem 0;
-      margin-top: auto;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      text-transform: uppercase;
+    }
+    .resume-sections {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h2 {
+      color: #93f36a;
+      margin-top: 2rem;
+    }
+    ul li {
+      margin-bottom: .5rem;
+    }
+    section {
+      background: transparent;
+      color: #fff;
+      margin: 2rem 0;
+      padding: 0;
+    }
+    .job-desc {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-top: 0.25rem;
+    }
+    .circle-nav {
+      position: fixed;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      z-index: 1000;
+    }
+    .circle-link {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: #cfc8ff;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,.3);
+      transition: transform .2s ease;
+      font-size: 0.85rem;
+    }
+    .circle-link:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <h1>Resume</h1>
-    <p>Wang, Meng-Chi | 東京大学大学院 生産技術研究者・AIエンジニア</p>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="projects.html">Project</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Main -->
-  <main class="container">
-    <section class="card">
-      <h2>学歴</h2>
-      <ul>
-        <li><strong>東京大学 大学院</strong> — 学際情報学府 複雑理工学専攻 修士課程（2023–）</li>
-        <li><strong>国立成功大学（台湾）</strong> — 電気工程学科 学士（2018–2022）</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>職歴・インターン</h2>
-      <ul>
-        <li><strong>AIエンジニア インターン</strong> — Airion株式会社（2024–2025）  
-          <br/>製造業向け画像検査AIの開発、PLCコード検索システムの構築</li>
-        <li><strong>研究補助員</strong> — 東京大学 青西研究室（2023–）  
-          <br/>SIMS信号解析におけるベイズ推論・EMCアルゴリズムの研究</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>スキル</h2>
-      <ul>
-        <li>プログラミング：C++（HPC/EMC）、Python（NumPy, Pandas, Matplotlib, scikit-learn）</li>
-        <li>AI/ML：PyTorch, OpenAI API, Embedding Search, RAG</li>
-        <li>Web開発：HTML/CSS/JavaScript, Node.js, GitHub Pages</li>
-        <li>言語：日本語（ビジネスレベル）、英語（TOEIC 900+）、中国語（母語）</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>受賞・奨学金</h2>
-      <ul>
-        <li>情報処理学会 第86回大会 学生奨励賞</li>
-        <li>Mercari Bold Program 2025 優勝</li>
-        <li>各種奨学金（例：財団研究奨学金 2024年度）</li>
-      </ul>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Wang, Meng-Chi |
-      <a href="mailto:elvnee@gmail.com" style="color:#fff;">Email</a> |
-      <a href="https://github.com/wanaincode" target="_blank" style="color:#fff;">GitHub</a>
-    </p>
-  </footer>
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">Resume</h1>
+      <div class="resume-sections">
+        <section>
+          <h2>学歴</h2>
+          <ul>
+            <li><strong>東京大学 大学院</strong> — 新領域創世科学研究科 複雑理工学専攻 修士課程（2024/10–2026/9見込み）</li>
+            <li><strong>国立清華大学 大学院（台湾）</strong> — 材料工学 金属専攻　修士課程（2017–2020）</li>
+            <li><strong>国立清華大学（台湾）</strong> — 材料工学 学士課程（2013–2017）</li>
+          </ul>
+        </section>
+        <section>
+          <h2>職歴・インターン</h2>
+          <ul>
+            <li>
+              Airion株式会社（2025/3–2025/12）
+              <div>AIエンジニア　長期インターン</div>
+              <div class="job-desc">製造業向け画像検査AIの開発、PLCコード検索LLMシステムの構築</div>
+            </li>
+            <li>
+              東京エレクトロン株式会社（台湾）（2020–2022）
+              <div>プロセスエンジニア　正社員</div>
+              <div class="job-desc">半導体プロセス設計、プラズマ密度管理、品質改善、技術導入</div>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>スキル</h2>
+          <ul>
+            <li>プログラミング：Python（NumPy, Pandas, Matplotlib, scikit-learn）、C++、R</li>
+            <li>AI/ML：PyTorch, OpenAI API, Embedding Search, RAG</li>
+            <li>Web開発：HTML/CSS/JavaScript, Node.js, GitHub Pages</li>
+            <li>言語：日本語（N1）、英語（TOEIC 860）、中国語（母語）</li>
+          </ul>
+        </section>
+        <section>
+          <h2>受賞・奨学金</h2>
+          <ul>
+            <li>Mercari Bold Program 2025 優勝</li>
+            <li>情報処理学会 第86回大会(2024) 学生奨励賞</li>
+            <li>東燃財団奨学金 2024年度</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </section>
+  <div class="circle-nav">
+    <a href="index.html" class="circle-link">Home</a>
+    <a href="research.html" class="circle-link">Research</a>
+    <a href="projects.html" class="circle-link">Project</a>
+  </div>
 </body>
 </html>
