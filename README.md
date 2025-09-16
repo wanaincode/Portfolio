@@ -16,4 +16,4 @@ portfolio/
 
 ## 🌐 デプロイ
 GitHub Pages で公開しています：  
-👉 [https://wanaincode.github.io/Portfolio/](https://wanaincode.github.io/Portfolio/)
+👉 <a href="https://wanaincode.github.io/Portfolio/" target="_blank" rel="noopener noreferrer">https://wanaincode.github.io/Portfolio/</a>
