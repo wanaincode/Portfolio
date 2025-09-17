@@ -77,6 +77,19 @@
       gap: 1rem;
       z-index: 1000;
     }
+    /* 手機版（螢幕寬度 <= 600px 時） */
+    @media (max-width: 600px) {
+      .circle-nav {
+        top: auto;           /* 取消垂直置中 */
+        right: 0;            /* 取消右側定位 */
+        bottom: 10px;        /* 改到視窗底部 */
+        left: 0;             /* 撐滿整個寬度 */
+        flex-direction: row; /* 橫向排列 */
+        justify-content: center;
+        gap: 2rem;           /* 橫向間距 */
+        transform: none;     /* 移除 translateY */
+      }
+    }
     .circle-link {
       width: 70px;
       height: 70px;
@@ -175,6 +188,7 @@
             <li>Mercari Bold Program 2025 優勝</li>
             <li>情報処理学会 第86回大会（2024） 学生奨励賞</li>
             <li>東燃財団奨学金 2024年度</li>
+            <li>東京エレクトロン株式会社　最優秀新人賞</li>
           </ul>
         </section>
       </div>
