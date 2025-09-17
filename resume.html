@@ -77,7 +77,7 @@
       gap: 1rem;
       z-index: 1000;
     }
-    /* 手機版（螢幕寬度 <= 600px 時） */
+    /* 手機版：小於 600px 時 */
     @media screen and (max-width: 600px) {
       .circle-nav {
         position: fixed;
@@ -89,6 +89,10 @@
         flex-direction: row;
         justify-content: center;
         gap: 2rem;
+      }
+
+      .container {
+        max-width: 85%;     /* ✅ 手機版的寬度覆蓋 */
       }
     }
     .circle-link {

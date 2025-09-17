@@ -63,14 +63,32 @@
     padding: 0;
   }
   .circle-nav {
-    position: fixed;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    z-index: 1000;
+      position: fixed;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      z-index: 1000;
+    }
+  /* 手機版：小於 600px 時 */
+  @media screen and (max-width: 600px) {
+    .circle-nav {
+      position: fixed;
+      top: auto;
+      bottom: 10px;       /* 移到下方 */
+      left: 0;
+      right: 0;
+      transform: none;    /* 移除 translateY */
+      flex-direction: row;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .container {
+      max-width: 85%;     /* ✅ 手機版的寬度覆蓋 */
+    }
   }
   .circle-link {
     width: 70px;
