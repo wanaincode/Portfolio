@@ -78,16 +78,17 @@
       z-index: 1000;
     }
     /* 手機版（螢幕寬度 <= 600px 時） */
-    @media (max-width: 600px) {
+    @media screen and (max-width: 600px) {
       .circle-nav {
-        top: auto;           /* 取消垂直置中 */
-        right: 0;            /* 取消右側定位 */
-        bottom: 10px;        /* 改到視窗底部 */
-        left: 0;             /* 撐滿整個寬度 */
-        flex-direction: row; /* 橫向排列 */
+        position: fixed;
+        top: auto;
+        bottom: 10px;       /* 移到下方 */
+        left: 0;
+        right: 0;
+        transform: none;    /* 移除 translateY */
+        flex-direction: row;
         justify-content: center;
-        gap: 2rem;           /* 橫向間距 */
-        transform: none;     /* 移除 translateY */
+        gap: 2rem;
       }
     }
     .circle-link {
