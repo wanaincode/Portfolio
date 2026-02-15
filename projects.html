@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Wang, Meng-Chi | Project</title>
   <style>
     /* ===== Base ===== */
@@ -15,7 +16,7 @@
     }
 
     /* ===== Layout ===== */
-    .container {                /* 唯一外層容器：你目前用百分比，我保留 */
+    .container {             
       max-width: 75%;
       margin: 0 auto;
       padding: 2rem 1rem 3rem;
@@ -39,7 +40,7 @@
       transition: transform .4s ease;
       will-change: transform;
     }
-    .card {                     /* 一頁一張，邏輯最穩 */
+    .card {                 
       flex: 0 0 100%;
       min-width: 100%;
       padding: 1.25rem 0;
@@ -114,7 +115,7 @@
       }
 
       .container {
-        max-width: 95%;     /* ✅ 手機版的寬度覆蓋 */
+        max-width: 95%;     /* 手機版的寬度覆蓋 */
       }
     }
     .circle-link {
@@ -171,14 +172,21 @@
       const mediaHTML = (m) => {
         if (!m || m.type === 'none') return '';
         if (m.type === 'youtube' && m.id) {
+          const id = escapeHtml(m.id);
+          const watchUrl = `https://www.youtube.com/watch?v=${id}`;
           return `
             <div class="media yt">
               <div class="yt-16x9">
-                <iframe src="https://www.youtube.com/embed/${escapeHtml(m.id)}"
+                <iframe src="https://www.youtube-nocookie.com/embed/${id}"
                         title="YouTube video"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        loading="lazy"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
+              </div>
+              <div class="btn-row">
+                <a class="btn outline" href="${watchUrl}" target="_blank" rel="noopener">YouTubeで見る</a>
               </div>
             </div>`;
         }

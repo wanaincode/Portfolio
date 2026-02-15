@@ -13,15 +13,15 @@ window.PROJECTS = [
   {
     title: "情報処理学会プロジェクト【学生奨励賞】",
     desc: "冷蔵庫内食材の自動判別システム。GroundingDINO / SAM / CLIP を統合し、UI を構築。",
-    media: { type: "youtube", id: "WM_rVHsI6sQ" }, // #comment: 換成你的 ID 或移除此欄位
+    media: { type: "youtube", id: "WM_rVHsI6sQ" }, 
     tags: ["Computer Vision", "DINO", "SAM"],
-    github: "https://github.com/wanaincode/UEC_kobo2023_project?tab=readme-ov-file", // #comment: 可選
-    demo: "" // #comment: 可選（如果有線上 demo）
+    github: "https://github.com/wanaincode/UEC_kobo2023_project?tab=readme-ov-file", 
+    demo: "" 
   },
   {
     title: "Instagram 抽籤ツール",
     desc: "投稿コメントを取得しランダム抽選する Web ツール。",
-    media: { type: "image", src: "images/insta-lottery.png", alt: "抽籤工具畫面" }, // #comment: 可用相對路徑圖片
+    media: { type: "image", src: "images/insta-lottery.png", alt: "抽籤工具畫面" }, 
     tags: ["Frontend", "HTML", "CSS", "JavaScript"],
     github: "https://github.com/wanaincode/instagram_lottory",
     demo: "https://wanaincode.github.io/instagram_lottory/"
@@ -37,7 +37,7 @@ window.PROJECTS = [
   {
     title: "Portfolio（本サイト）",
     desc: "個人ポートフォリオサイトのデザインと実装。GitHub Pages で公開。",
-    media: { type: "none" }, // #comment: 沒媒體就寫 none 或移除此欄位
+    media: { type: "none" }, 
     tags: ["HTML", "CSS", "JS"],
     github: "https://github.com/wanaincode/Portfolio",
     demo: "https://wanaincode.github.io/Portfolio/"
