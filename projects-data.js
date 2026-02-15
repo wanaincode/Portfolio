@@ -5,7 +5,7 @@ window.PROJECTS = [
   {
     title: "アーバンデータチャレンジ2025【学生奨励賞】",
     desc: "災害時に外国人観光客が避難や情報共有で困難を抱える課題に対し、GISやGTFSなどのオープンデータを活用し、ネットワークが遮断された状況でもBluetooth通信で近くの人と情報を共有・連携できる多言語対応アプリを開発する。",
-    media: { type: "image", src: "images/udc2025-home2.png", alt: "Resilient Mesh Nav アプリ画面" },
+    media: { type: "image", src: "images/udc2025.png", alt: "Resilient Mesh Nav アプリ画面" },
     tags: ["Flutter", "Bluetooth Mesh", "GIS", "Disaster Prevention", "Multi-language", "Offline-first"],
     github: "https://github.com/SolaIntegral/udc2025",
     demo: ""
